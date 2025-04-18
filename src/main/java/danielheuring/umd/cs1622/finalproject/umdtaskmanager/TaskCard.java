@@ -16,21 +16,23 @@ public class TaskCard extends HBox {
     public TaskCard(ITask task, Runnable onComplete, Runnable onRemove) {
         this.task = task;
 
-        setSpacing(10);
-        setPadding(new Insets(10));
-        setAlignment(Pos.CENTER_LEFT);
-        setStyle("-fx-border-color: #ccc; -fx-background-color: #fefefe; -fx-border-radius: 5; -fx-background-radius: 5;");
+        this.setSpacing(10);
+        this.setPadding(new Insets(10));
+        this.setAlignment(Pos.CENTER_LEFT);
+        this.getStyleClass().add("task-card");
 
         titleLabel = new Label(task.getTitle());
-        titleLabel.setStyle("-fx-font-weight: bold;");
+        titleLabel.getStyleClass().add("task-title");
 
         completeButton = new Button("✓");
+        completeButton.getStyleClass().add("task-button");
         completeButton.setOnAction(e -> onComplete.run());
 
         removeButton = new Button("✕");
+        removeButton.getStyleClass().add("task-button");
         removeButton.setOnAction(e -> onRemove.run());
 
-        getChildren().addAll(titleLabel, completeButton, removeButton);
+        this.getChildren().addAll(titleLabel, completeButton, removeButton);
     }
 
     public ITask getTask() {

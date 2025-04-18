@@ -2,6 +2,7 @@ package danielheuring.umd.cs1622.finalproject.umdtaskmanager;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
@@ -18,10 +19,11 @@ public class DashboardView extends BorderPane {
     private VBox todayTasks;
     private Label quoteLabel;
 
-    private IMPVContract.Presenter presenter;
+    private final IMPVContract.Presenter presenter;
 
-    public DashboardView( IMPVContract.Presenter presenter ) {
+    public DashboardView(IMPVContract.Presenter presenter) {
         this.presenter = presenter;
+        this.getStyleClass().add("root");
         setupTop();
         setupLeftSidebar();
         setupCenter();
@@ -35,7 +37,7 @@ public class DashboardView extends BorderPane {
         topBar.setAlignment(Pos.CENTER_LEFT);
 
         greetingLabel = new Label("Hello, Daniel");
-        greetingLabel.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+        greetingLabel.getStyleClass().add("label-title");
 
         datePicker = new DatePicker();
         datePicker.setEditable(false);
@@ -54,14 +56,12 @@ public class DashboardView extends BorderPane {
 
         for (int i = 0; i < 7; i++) {
             Button btn = new Button();
-            btn.setMinSize(40, 40);
-            btn.setMaxSize(40, 40);
+            btn.getStyleClass().add("sidebar-button");
             sidebar.getChildren().add(btn);
         }
 
         Button addButton = new Button("+");
-        addButton.setMinSize(40, 40);
-        addButton.setMaxSize(40, 40);
+        addButton.getStyleClass().add("sidebar-button");
         addButton.setOnAction(e -> showAddTaskDialog());
         sidebar.getChildren().add(addButton);
 
@@ -81,7 +81,7 @@ public class DashboardView extends BorderPane {
             column.setPrefHeight(400);
 
             Label classLabel = new Label("Class " + (i + 1));
-            classLabel.setFont(Font.font("Arial", FontWeight.BOLD, 14));
+            classLabel.getStyleClass().add("label-section");
             column.getChildren().add(classLabel);
 
             for (int j = 0; j < 3; j++) {
@@ -106,11 +106,11 @@ public class DashboardView extends BorderPane {
         todayTasks.setAlignment(Pos.TOP_CENTER);
 
         Label todayLabel = new Label("Today");
-        todayLabel.setFont(Font.font("Arial", FontWeight.BOLD, 16));
+        todayLabel.getStyleClass().add("label-section");
         todayTasks.getChildren().add(todayLabel);
 
         LocalDate today = LocalDate.now();
-        for (ITask task : presenter.getIncompleteTasks()) {
+        for (ITask task : presenter.getTasks()) {
             if (task.getDueDate().equals(today)) {
                 TaskCard card = new TaskCard(
                         task,
@@ -131,10 +131,8 @@ public class DashboardView extends BorderPane {
     }
 
     private void setupBottom() {
-        quoteLabel = new Label("\"Text Here.\"");
-        quoteLabel.setPadding(new Insets(10));
-        quoteLabel.setStyle("-fx-font-style: italic;");
-
+        quoteLabel = new Label("\"Push yourself, because no one else is going to do it for you.\"");
+        quoteLabel.getStyleClass().add("quote-label");
         this.setBottom(quoteLabel);
     }
 

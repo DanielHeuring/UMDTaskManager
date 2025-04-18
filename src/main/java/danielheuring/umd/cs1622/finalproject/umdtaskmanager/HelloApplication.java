@@ -19,6 +19,7 @@ public class HelloApplication extends Application implements IMPVContract.View {
 
         DashboardView view = new DashboardView( presenter );
         Scene scene = new Scene(view, 1440, 900);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("UMD Task Manager");
         stage.setScene(scene);
         stage.show();

@@ -1,0 +1,64 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #f4f4f8;
+}
+
+.label-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.label-section {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #444;
+}
+
+.sidebar-button {
+    -fx-background-color: #dddddd;
+    -fx-background-radius: 10px;
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #222;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #bbbbbb;
+}
+
+.task-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 10px;
+    -fx-spacing: 8px;
+}
+
+.task-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+.task-button {
+    -fx-background-color: #e0e0e0;
+    -fx-background-radius: 4px;
+    -fx-text-fill: #222;
+    -fx-font-weight: bold;
+    -fx-padding: 4px 8px;
+}
+
+.task-button:hover {
+    -fx-background-color: #cccccc;
+}
+
+.quote-label {
+    -fx-font-style: italic;
+    -fx-text-fill: #666;
+    -fx-padding: 10px;
+    -fx-font-size: 12px;
+}
+
+
