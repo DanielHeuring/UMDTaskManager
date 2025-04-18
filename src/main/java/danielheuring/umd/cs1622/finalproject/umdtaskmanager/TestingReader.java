@@ -10,6 +10,11 @@ public class TestingReader implements FileReader {
     public ArrayList<ITask> readFile(String fileName) {
         ArrayList<ITask> tasks = new ArrayList<>();
         tasks.add(new Task.Builder( "Task 3" ).setDueDate(LocalDate.now()).build());
+        tasks.add(new Task.Builder( "Task 4" ).setDueDate(LocalDate.now()).build());
+        tasks.add(new Task.Builder( "Task 5" ).setDueDate(LocalDate.now()).build());
+        tasks.add(new Task.Builder( "Task 6" ).setDueDate(LocalDate.now()).build());
+        tasks.add(new Task.Builder( "Task 7" ).setDueDate(LocalDate.now()).build());
+        tasks.add(new Task.Builder( "Task 8" ).setDueDate(LocalDate.now()).build());
         tasks.add(new Task.Builder( "Task 1" ).setDueDate(LocalDate.of(2000,3,12)).build());
         tasks.add(new Task.Builder( "Task 2" ).setDueDate(LocalDate.of(2024, 4, 12)).build());
 

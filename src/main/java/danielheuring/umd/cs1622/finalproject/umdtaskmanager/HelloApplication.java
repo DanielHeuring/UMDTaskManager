@@ -17,7 +17,8 @@ public class HelloApplication extends Application implements IMPVContract.View {
 
         BorderPane root = new BorderPane();
 
-        Scene scene = new Scene(root, 1440, 900);
+        DashboardView view = new DashboardView( presenter );
+        Scene scene = new Scene(view, 1440, 900);
         stage.setTitle("UMD Task Manager");
         stage.setScene(scene);
         stage.show();
@@ -31,4 +32,5 @@ public class HelloApplication extends Application implements IMPVContract.View {
     public void updateTasks(ArrayList<ITask> tasks) {
 
     }
+
 }
