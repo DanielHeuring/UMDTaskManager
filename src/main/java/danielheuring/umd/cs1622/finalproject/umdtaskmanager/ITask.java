@@ -11,5 +11,6 @@ public interface ITask {
     public String getTitle();
     public void setTitle(String title);
     public boolean isCompleted();
+    public String getClassName();
 
 }

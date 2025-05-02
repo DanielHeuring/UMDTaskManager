@@ -6,4 +6,6 @@ public interface FileReader {
 
     public ArrayList<ITask> readFile(String fileName);
 
+    public ArrayList<Course> readCourses(String fileName);
+
 }

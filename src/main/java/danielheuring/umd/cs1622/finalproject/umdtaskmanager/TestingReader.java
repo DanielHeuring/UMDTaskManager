@@ -9,15 +9,56 @@ public class TestingReader implements FileReader {
     @Override
     public ArrayList<ITask> readFile(String fileName) {
         ArrayList<ITask> tasks = new ArrayList<>();
-        tasks.add(new Task.Builder( "Task 3" ).setDueDate(LocalDate.now()).build());
-        tasks.add(new Task.Builder( "Task 4" ).setDueDate(LocalDate.now()).build());
-        tasks.add(new Task.Builder( "Task 5" ).setDueDate(LocalDate.now()).build());
-        tasks.add(new Task.Builder( "Task 6" ).setDueDate(LocalDate.now()).build());
-        tasks.add(new Task.Builder( "Task 7" ).setDueDate(LocalDate.now()).build());
-        tasks.add(new Task.Builder( "Task 8" ).setDueDate(LocalDate.now()).build());
-        tasks.add(new Task.Builder( "Task 1" ).setDueDate(LocalDate.of(2000,3,12)).build());
-        tasks.add(new Task.Builder( "Task 2" ).setDueDate(LocalDate.of(2024, 4, 12)).build());
+        tasks.add(new Task.Builder("HW 1")
+                .setDueDate(LocalDate.now().plusDays(1))
+                .setClass("CS 1622")
+                .build());
 
+        tasks.add(new Task.Builder("Lab Report")
+                .setDueDate(LocalDate.now().plusDays(2))
+                .setClass("CE 1000")
+                .build());
+
+        tasks.add(new Task.Builder("Study MIDTERM")
+                .setDueDate(LocalDate.now().plusDays(3))
+                .setClass("CS 2531")
+                .build());
+
+        tasks.add(new Task.Builder("Sketchbook")
+                .setDueDate(LocalDate.now().plusDays(0))
+                .setClass("ART 1900")
+                .build());
+
+        tasks.add(new Task.Builder("Website Draft")
+                .setDueDate(LocalDate.now().plusDays(5))
+                .setClass("Personal")
+                .build());
+
+        tasks.add(new Task.Builder("Group Project")
+                .setDueDate(LocalDate.now().plusDays(6))
+                .setClass("CS 1622")
+                .build());
+
+        tasks.add(new Task.Builder("Essay")
+                .setDueDate(LocalDate.now().plusDays(7))
+                .setClass("ART 1900")
+                .build());
+
+        tasks.add(new Task.Builder("Code Review")
+                .setDueDate(LocalDate.now().plusDays(8))
+                .setClass("CS 2531")
+                .build());
         return tasks;
+    }
+
+    @Override
+    public ArrayList<Course> readCourses(String fileName) {
+        ArrayList<Course> courses = new ArrayList<>();
+        courses.add( new Course( "CS 1622" , "Willemsen" ));
+        courses.add( new Course( "CS 2531" , "Knight" ));
+        courses.add( new Course( "CE 1000" , "Schokker" ));
+        courses.add( new Course( "ART 1900" , "Klug" ));
+        courses.add( new Course( "Personal" , "Heuring" ));
+        return courses;
     }
 }

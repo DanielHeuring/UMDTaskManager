@@ -15,9 +15,8 @@ public class HelloApplication extends Application implements IMPVContract.View {
 
         IMPVContract.Presenter presenter = new Presenter(this);
 
-        BorderPane root = new BorderPane();
+        DashboardView view = new DashboardView(presenter);
 
-        DashboardView view = new DashboardView( presenter );
         Scene scene = new Scene(view, 1440, 900);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("UMD Task Manager");
@@ -30,8 +29,6 @@ public class HelloApplication extends Application implements IMPVContract.View {
     }
 
     @Override
-    public void updateTasks(ArrayList<ITask> tasks) {
-
-    }
+    public void updateTasks(ArrayList<ITask> tasks) {}
 
 }

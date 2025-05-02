@@ -5,9 +5,11 @@ import java.util.Comparator;
 
 public class TaskManager {
     private ArrayList<ITask> tasks;
+    private ArrayList<Course> courses;
 
     public TaskManager( FileReader fileReader ) {
         tasks = fileReader.readFile("tasks.txt");
+        courses = fileReader.readCourses("tasks.txt");
         sortTasksByDueDate( tasks );
         }
 
@@ -51,4 +53,6 @@ public class TaskManager {
     public void removeTask(ITask task) {
         tasks.remove(task);
     }
+
+    public ArrayList<Course> getCourses() { return courses; }
 }

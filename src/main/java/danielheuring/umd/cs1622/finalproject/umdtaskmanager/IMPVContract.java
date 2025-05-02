@@ -18,6 +18,8 @@ public interface IMPVContract {
         public ArrayList<ITask> getTasks();
         public ArrayList<ITask> getIncompleteTasks();
         public ArrayList<ITask> getCompletedTasks();
+        public boolean isComplete( ITask task );
+        public ArrayList<Course> getCourses();
 
     }
 

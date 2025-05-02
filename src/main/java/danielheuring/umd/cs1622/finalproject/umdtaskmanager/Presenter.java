@@ -45,4 +45,14 @@ public class Presenter implements IMPVContract.Presenter {
     public ArrayList<ITask> getCompletedTasks() {
         return taskManager.getCompletedTasks();
     }
+
+    @Override
+    public boolean isComplete(ITask task) {
+        return task.isCompleted();
+    }
+
+    @Override
+    public ArrayList<Course> getCourses() {
+        return taskManager.getCourses();
+    }
 }

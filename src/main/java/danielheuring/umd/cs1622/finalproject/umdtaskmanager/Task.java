@@ -6,18 +6,21 @@ public class Task implements ITask {
     private String title;
     private LocalDate dueDate;
     private boolean isCompleted;
+    private String className;
 
     // Task Builder
     public Task( Builder builder ) {
         this.title = builder.title;
         this.dueDate = builder.dueDate;
         this.isCompleted = builder.isCompleted;
+        this.className = builder.className;
     }
 
     public static class Builder {
         private String title;
         private LocalDate dueDate;
         private boolean isCompleted;
+        private String className;
 
         public Builder( String title ) {
             this.title = title;
@@ -26,6 +29,11 @@ public class Task implements ITask {
 
         public Builder setDueDate( LocalDate dueDate ) {
             this.dueDate = dueDate;
+            return this;
+        }
+
+        public Builder setClass( String className ) {
+            this.className = className;
             return this;
         }
 
@@ -69,4 +77,7 @@ public class Task implements ITask {
     public boolean isCompleted() {
         return isCompleted;
     }
+
+    @Override
+    public String getClassName() { return className; }
 }
